@@ -627,6 +627,37 @@ function scrollToTop() {
 }
 
 updateProgress();
+  // ===== AUTOSAVE =====
+
+// Textfelder speichern
+const autosaveInputs = document.querySelectorAll('.ainput');
+autosaveInputs.forEach((input, index) => {
+  const key = 'zenova_answer_' + index;
+
+  input.value = localStorage.getItem(key) || '';
+
+  input.addEventListener('input', () => {
+    localStorage.setItem(key, input.value);
+  });
+});
+
+// Checkboxen speichern
+const autosaveChecks = document.querySelectorAll('.qcheck');
+const autosaveCards = document.querySelectorAll('.qcard');
+
+autosaveChecks.forEach((check, index) => {
+  const key = 'zenova_check_' + index;
+
+  const saved = localStorage.getItem(key);
+  if (saved === 'true') {
+    check.checked = true;
+    autosaveCards[index]?.classList.add('answered');
+  }
+
+  check.addEventListener('change', () => {
+    localStorage.setItem(key, check.checked);
+  });
+});
 </script>
 </body>
 </html>
