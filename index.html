@@ -1,663 +1,95 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coaching-Fragen Berufsorientierung</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
-:root{
-  --navy:#1e3764; --navy-d:#152d55; --navy-l:#eef1f9;
-  --yellow:#f5c840; --yellow-l:#fffbe8; --yellow-d:#b8940a;
-  --text:#2c3e50; --text-l:#6b7c93;
-  --white:#ffffff; --bg:#f7f8fa; --border:#e2e8f0;
-  --green:#1a7f74; --green-l:#e8f5f3;
-  --orange:#e07a30; --orange-l:#fdf0e8;
-  --purple:#7c5cbf; --purple-l:#f0ebfa;
-  --rose:#c0392b; --rose-l:#fff5f5;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:'Open Sans',sans-serif;padding-bottom:60px;}
-
-header{background:var(--white);border-bottom:3px solid var(--navy);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:72px;box-shadow:0 2px 14px rgba(0,0,0,0.07);position:sticky;top:0;z-index:100;}
-.h-tool{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--navy);}
-.h-sub{font-size:11px;color:var(--text-l);margin-top:1px;}
-
-.container{max-width:1000px;margin:40px auto;padding:0 40px;}
-.phase{background:var(--white);border-radius:16px;padding:40px;margin-bottom:32px;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
-.phase-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--border);}
-.phase-icon{width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;}
-.phase-icon.green{background:var(--green-l);color:var(--green);}
-.phase-icon.orange{background:var(--orange-l);color:var(--orange);}
-.phase-icon.purple{background:var(--purple-l);color:var(--purple);}
-.phase-icon.navy{background:var(--navy-l);color:var(--navy);}
-.phase-icon.yellow{background:var(--yellow-l);color:var(--yellow-d);}
-.phase-icon.rose{background:var(--rose-l);color:var(--rose);}
-.phase-title{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;color:var(--navy);}
-.phase-desc{font-size:14px;color:var(--text-l);margin-top:4px;}
-
-.section{margin-bottom:32px;}
-.section-title{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
-.section-title::before{content:'';width:4px;height:20px;background:var(--yellow);border-radius:2px;}
-
-.qcard{background:var(--bg);border-left:3px solid var(--navy-l);padding:16px 20px;border-radius:8px;margin-bottom:12px;transition:all .2s;}
-.qcard:hover{border-left-color:var(--navy);background:var(--navy-l);}
-.qcard.answered{border-left-color:var(--green);background:var(--green-l);}
-.qheader{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px;}
-.qcheck{width:20px;height:20px;cursor:pointer;margin-top:2px;accent-color:var(--navy);}
-.qtext{flex:1;font-size:14px;line-height:1.6;color:var(--text);font-weight:600;}
-.qtext strong{color:var(--navy);}
-.ainput{width:100%;padding:12px;border:2px solid var(--border);border-radius:6px;font-family:'Open Sans',sans-serif;font-size:13px;resize:vertical;min-height:70px;transition:all .2s;}
-.ainput:focus{outline:none;border-color:var(--navy);background:var(--white);}
-
-.tool-box{background:var(--yellow-l);border:2px solid var(--yellow);border-radius:12px;padding:24px;margin:24px 0;}
-.tool-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--navy);margin-bottom:12px;}
-.tool-content{font-size:14px;line-height:1.8;color:var(--text);}
-
-.action-btns{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
-.btn{padding:12px 24px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;border:none;}
-.btn-primary{background:var(--navy);color:var(--white);}
-.btn-primary:hover{background:var(--navy-d);transform:translateY(-1px);}
-.btn-secondary{background:var(--yellow);color:var(--navy);}
-.btn-secondary:hover{background:var(--yellow-d);}
-
-.progress-info{background:var(--navy-l);border-radius:8px;padding:16px;margin-bottom:24px;text-align:center;}
-.progress-info strong{color:var(--navy);font-family:'Montserrat',sans-serif;}
-
-@media print{
-  header{position:relative;}
-  .action-btns{display:none;}
-  .ainput{border:1px solid #999;background:var(--white);}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenova Check | Planbare Anfragen statt Zufall</title>
+  <style>
+    :root{--navy:#10284f;--navy-2:#173a6d;--accent:#f5c840;--bg:#f5f7fb;--text:#1f2f46;--muted:#62708a;--line:#dde5f1;--white:#fff}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:30}
+    .nav{min-height:70px;display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:800;letter-spacing:.05em;color:var(--navy)} .brand span{color:var(--accent)}
+    .hero{background:linear-gradient(150deg,var(--navy),var(--navy-2));color:#fff;padding:78px 0}
+    h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.18;margin:0 0 16px}
+    .sub{max-width:800px;color:#e5ecf8}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
+    .btn-main{background:var(--accent);color:#10284f}.btn-alt{border:1px solid #9fb2d6;color:#fff}
+    section{padding:56px 0}.title{font-size:1.7rem;color:var(--navy);margin:0 0 8px}.lead{color:var(--muted);margin:0 0 24px}
+    .grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+    .card h3{margin:0 0 8px;color:var(--navy)} .proof{font-weight:700}
+    .quote{background:#fff7d9;border-left:5px solid var(--accent);padding:16px;border-radius:10px;font-weight:700;color:#2d3d5b}
+    .steps li{margin-bottom:10px}
+    footer{background:var(--navy);color:#d7e1f5;padding:28px 0;margin-top:18px}
+  </style>
 </head>
 <body>
+  <header><div class="wrap nav"><div class="brand">ZENOVA <span>COACHING</span></div><div style="color:var(--muted);font-size:.95rem">Schweizer Markt · Business Coaching</div></div></header>
 
-<header>
-  <div>
-    <div class="h-tool">COACHING-FRAGEN</div>
-    <div class="h-sub">Berufsorientierung & Jobwunsch</div>
-  </div>
-  <div style="text-align:right;">
-    <div class="h-tool">ZENOVA</div>
-    <div class="h-sub">patricezenova.ch</div>
-  </div>
-</header>
-
-<div class="container">
-  
-  <div class="progress-info">
-    <span id="progress">0 von 0 Fragen beantwortet</span>
-  </div>
-
-  <div class="action-btns" style="justify-content:center;margin-bottom:32px;">
-    <button class="btn btn-secondary" onclick="window.print()">📄 Drucken/PDF</button>
-    <button class="btn btn-primary" onclick="resetAll()">🔄 Alles zurücksetzen</button>
-    <button class="btn btn-primary" onclick="scrollToNext()">⬇️ Nächste Frage</button>
-  </div>
-
-  <!-- PHASE 1 -->
-  <div class="phase">
-    <div class="phase-header">
-      <div class="phase-icon green">🔍</div>
-      <div>
-        <div class="phase-title">PHASE 1: IST-Analyse</div>
-        <div class="phase-desc">Wo steht dein Coachee gerade?</div>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Du bekommst Kunden über Empfehlungen. Aber dein Umsatz bleibt trotzdem unplanbar?</h1>
+      <p class="sub">Mach den kostenlosen Zenova Check und erkenne in wenigen Minuten, wo dein Business aktuell Anfragen verliert, warum dein Angebot noch nicht klar genug verstanden wird und welcher nächste Schritt dir planbarer passende Kunden bringt.</p>
+      <div class="btns">
+        <a class="btn btn-main" href="#check">Kostenloser Zenova Check</a>
+        <a class="btn btn-alt" href="#proof">Trainingsvideo zu meinem Ergebnis ansehen</a>
       </div>
     </div>
+  </section>
 
-    <div class="section">
-      <div class="section-title">Aktuelle Situation verstehen</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wie zufrieden bist du aktuell in deinem Job? (1-10)</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was genau stört dich an deiner aktuellen Situation?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was funktioniert gut in deinem jetzigen Job?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Seit wann denkst du über einen Wechsel nach?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was war der Auslöser für den Wechselwunsch?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wie dringlich ist der Wechsel? <strong>(sofort / 3 Mon / 6 Mon / flexibel)</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was würde passieren, wenn du NICHTS veränderst?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
+  <section id="proof"><div class="wrap">
+    <h2 class="title">Echte Kundenwins aus dem System</h2>
+    <p class="lead">Proof früh zeigen. Klar statt laut.</p>
+    <div class="grid g2">
+      <div class="card proof">29 Tage Ads · 2 Calls · 1 Close · 4'600 CHF Umsatz</div>
+      <div class="card proof">30 Tage Ads · 2 Calls · 1 Close · 4'200 CHF Umsatz</div>
+      <div class="card proof">31 Tage Ads · 3 Calls · 1 Close · 5'200 CHF Umsatz</div>
+      <div class="card proof">Jennifer: erster Kunde geclosed · 3'200 CHF</div>
     </div>
+    <p class="quote" style="margin-top:14px">Empfehlungen sind ein Bonus. Aber nicht dein Fundament. Zufall ist kein Business.</p>
+  </div></section>
 
-    <div class="section">
-      <div class="section-title">Bisherige Karriere reflektieren</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wann warst du in deiner Karriere am glücklichsten? <strong>Was war damals anders?</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Welche Jobs/Projekte haben dir am meisten Spaß gemacht? Warum?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Welche Tätigkeiten haben dich erfüllt?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was waren deine größten beruflichen Erfolge?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wofür wirst du von Kollegen/Chefs geschätzt?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was konntest du immer schon besonders gut?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
+  <section id="check"><div class="wrap">
+    <h2 class="title">Zenova Check: Diagnose statt Ratespiel</h2>
+    <p class="lead">Der Check soll sich hochwertig anfühlen und in 6–8 Fragen klar machen, wo du aktuell passende Anfragen verlierst.</p>
+    <div class="grid g4">
+      <div class="card"><h3>Sichtbarkeits-Lücke</h3><p>Die richtigen Menschen sehen dich noch zu selten.</p></div>
+      <div class="card"><h3>Positionierungs-Lücke</h3><p>Dein Markt versteht nicht schnell genug, warum genau du relevant bist.</p></div>
+      <div class="card"><h3>Vertrauens-Lücke</h3><p>Vor dem Gespräch entsteht noch zu wenig Vertrauen.</p></div>
+      <div class="card"><h3>System-Lücke</h3><p>Zu viel hängt von Zufall, Empfehlungen und unregelmässiger Aktivität ab.</p></div>
     </div>
-  </div>
+  </div></section>
 
-  <!-- PHASE 2 -->
-  <div class="phase">
-    <div class="phase-header">
-      <div class="phase-icon purple">💎</div>
-      <div>
-        <div class="phase-title">PHASE 2: Werte & Prioritäten</div>
-        <div class="phase-desc">Was ist wirklich wichtig?</div>
-      </div>
+  <section><div class="wrap">
+    <h2 class="title">So soll der Funnel laufen</h2>
+    <ol class="steps">
+      <li>Aufmerksamkeit / Traffic</li>
+      <li>Problem-Erkennung</li>
+      <li>Opt-in: Zenova Check</li>
+      <li>Diagnose / Quiz</li>
+      <li>Ergebnis-Seite mit Klarheits-Score + Haupthebel</li>
+      <li>2 Wege: kalt → Trainingsvideo, warm → Klarheitsgespräch</li>
+      <li>Follow-up je Ergebnis-Typ</li>
+    </ol>
+    <div class="btns">
+      <a class="btn btn-main" href="#">Zeig mir meinen nächsten Hebel</a>
+      <a class="btn btn-alt" href="#">Für warme Leads: Klarheitsgespräch anfragen</a>
     </div>
+  </div></section>
 
-    <div class="section">
-      <div class="section-title">Werte klären</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was ist dir im Job wichtiger: <strong>Geld, Sinn, Sicherheit, Freiheit, Entwicklung, Impact?</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wenn Geld keine Rolle spielen würde, was würdest du arbeiten?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was darf in deinem neuen Job auf <strong>KEINEN Fall</strong> fehlen?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was willst du auf <strong>KEINEN Fall</strong> mehr haben?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wie viel Stunden pro Woche willst du maximal arbeiten?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Willst du remote arbeiten, hybrid oder im Büro?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
+  <section><div class="wrap">
+    <h2 class="title">Nächste sinnvolle Schritte</h2>
+    <div class="grid g2">
+      <div class="card">Quiz technisch sauber testen (Mobile + Desktop, alle Ergebnispfade).</div>
+      <div class="card">Ergebnis-Seiten stärken: Bedeutung, Risiko, nächster Schritt, 2 CTAs.</div>
+      <div class="card">Trainingsvideo direkter starten: Problem + Haupthebel in den ersten Sekunden.</div>
+      <div class="card">Follow-up Mails nach Lückentyp personalisieren.</div>
     </div>
+  </div></section>
 
-    <div class="section">
-      <div class="section-title">Ideal-Job-Profil</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext"><strong>Beschreibe deinen perfekten Arbeitstag.</strong> Von 9-17 Uhr – was tust du?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..." style="min-height:100px;"></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Mit welchen Menschen arbeitest du zusammen? (Team, Kunden, Solo)</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Welche Probleme löst du in deinem Ideal-Job?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Führst du Menschen oder arbeitest du lieber ohne Führungsverantwortung?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">In welcher Branche siehst du dich? (oder egal?)</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-    </div>
-  </div>
-
-  <!-- PHASE 3 -->
-  <div class="phase">
-    <div class="phase-header">
-      <div class="phase-icon orange">🔎</div>
-      <div>
-        <div class="phase-title">PHASE 3: Optionen erkunden</div>
-        <div class="phase-desc">Welche Möglichkeiten gibt es?</div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Möglichkeiten identifizieren</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Welche konkreten Jobtitel/Positionen könnten passen?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">In welchen Branchen könntest du arbeiten?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext"><strong>Welche 3 Karrierewege könntest du dir vorstellen?</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..." style="min-height:100px;"></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Willst du in deinem bisherigen Bereich bleiben oder komplett neu anfangen?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Brauchst du eine Umschulung/Weiterbildung? Wenn ja, welche?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Hypothesen testen</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Mit wem könntest du über deren Job sprechen? <strong>(Informationsgespräche!)</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Welche Projekte könntest du nebenher starten, um etwas auszuprobieren?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-    </div>
-  </div>
-
-  <!-- PHASE 4 -->
-  <div class="phase">
-    <div class="phase-header">
-      <div class="phase-icon navy">⚖️</div>
-      <div>
-        <div class="phase-title">PHASE 4: Entscheidung treffen</div>
-        <div class="phase-desc">Welche Option ist die richtige?</div>
-      </div>
-    </div>
-
-    <div class="tool-box">
-      <div class="tool-title">🧭 Karriere-Kompass</div>
-      <div class="tool-content">
-        Bewerte jede deiner 3 Optionen auf Skala 1-10:<br>
-        <strong>Kriterien:</strong> Sinnhaftigkeit • Gehalt • Work-Life-Balance • Entwicklung • Sicherheit • Spaß • Flexibilität<br>
-        → Die Option mit höchster Gesamtpunktzahl + stärkstem Bauchgefühl gewinnt
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Die Entscheidung</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Welche Option zieht dich am meisten an?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wenn du nur auf dein Bauchgefühl hörst – was sagt es?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was würdest du wählen, wenn Scheitern unmöglich wäre?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Was würde dein 80-jähriges Ich dir raten?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext"><strong>Welche Wahl würdest du nicht bereuen, auch wenn es schwer wird?</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..." style="min-height:100px;"></textarea>
-      </div>
-    </div>
-  </div>
-
-  <!-- PHASE 5 -->
-  <div class="phase">
-    <div class="phase-header">
-      <div class="phase-icon yellow">🎯</div>
-      <div>
-        <div class="phase-title">PHASE 5: Jahresziel formulieren</div>
-        <div class="phase-desc">Aus der Entscheidung wird ein messbares Ziel</div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">SMART-Ziel erstellen</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext"><strong>Was ist dein konkretes berufliches Ziel für 2026?</strong></div>
-        </div>
-        <textarea class="ainput" placeholder='z.B. "Bis Juni 2026 einen Job als Produktmanager in einem Tech-Unternehmen"' style="min-height:100px;"></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wie misst du Erfolg? (z.B. Job-Angebot unterschrieben, Gehalt von X€)</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Bis wann willst du es erreicht haben?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Meilensteine für Jahresziele-Tracker</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext"><strong>Definiere 6 konkrete Meilensteine mit Deadlines</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="1. _________ (bis _____)
-2. _________ (bis _____)
-3. _________ (bis _____)
-4. _________ (bis _____)
-5. _________ (bis _____)
-6. _________ (bis _____)" style="min-height:150px;"></textarea>
-      </div>
-    </div>
-  </div>
-
-  <!-- PHASE 6 -->
-  <div class="phase">
-    <div class="phase-header">
-      <div class="phase-icon rose">🚀</div>
-      <div>
-        <div class="phase-title">PHASE 6: Umsetzung</div>
-        <div class="phase-desc">Wie setzt du das Ziel um?</div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Aktionsplan</div>
-      
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext"><strong>Was ist dein allererster Schritt diese Woche?</strong></div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wie viel Zeit pro Woche investierst du in den Jobwechsel?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wer kann dich unterstützen? (Netzwerk, Mentor, Recruiter)</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-
-      <div class="qcard">
-        <div class="qheader">
-          <input type="checkbox" class="qcheck" onchange="updateProgress()">
-          <div class="qtext">Wie hältst du dich accountable?</div>
-        </div>
-        <textarea class="ainput" placeholder="Antwort notieren..."></textarea>
-      </div>
-    </div>
-
-    <div class="tool-box">
-      <div class="tool-title">✅ Nächster Schritt: Jahresziele-Tracker</div>
-      <div class="tool-content">
-        <strong>Integration:</strong><br>
-        1. Trage dein Jobziel in den Excel-Tracker ein (eines der 3 Hauptziele)<br>
-        2. Füge die 6 Meilensteine mit Deadlines hinzu<br>
-        3. Nutze monatliche Coaching-Sessions für Updates<br>
-        4. Bei Blockaden: Komm zurück zu diesen Fragen
-      </div>
-    </div>
-  </div>
-
-  <div class="action-btns" style="justify-content:center;">
-    <button class="btn btn-secondary" onclick="window.print()">📄 Drucken/PDF speichern</button>
-    <button class="btn btn-primary" onclick="scrollToTop()">⬆️ Nach oben</button>
-  </div>
-
-</div>
-
-<script>
-const qchecks = document.querySelectorAll('.qcheck');
-const qcards = document.querySelectorAll('.qcard');
-
-qchecks.forEach((check, i) => {
-  check.addEventListener('change', () => {
-    qcards[i].classList.toggle('answered', check.checked);
-  });
-});
-
-function updateProgress() {
-  const total = qchecks.length;
-  const checked = Array.from(qchecks).filter(c => c.checked).length;
-  document.getElementById('progress').textContent = `${checked} von ${total} Fragen beantwortet`;
-}
-
-function resetAll() {
-  if(confirm('Wirklich alles zurücksetzen? Alle Antworten gehen verloren!')) {
-    document.querySelectorAll('.ainput').forEach(t => t.value = '');
-    qchecks.forEach(c => c.checked = false);
-    qcards.forEach(c => c.classList.remove('answered'));
-    updateProgress();
-    scrollToTop();
-  }
-}
-
-function scrollToNext() {
-  const unchecked = Array.from(qchecks).find(c => !c.checked);
-  if(unchecked) {
-    unchecked.closest('.qcard').scrollIntoView({behavior:'smooth', block:'center'});
-    unchecked.closest('.qcard').querySelector('.ainput').focus();
-  } else {
-    alert('Alle Fragen beantwortet! 🎉');
-  }
-}
-
-function scrollToTop() {
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-updateProgress();
-  // ===== AUTOSAVE =====
-
-// Textfelder speichern
-const autosaveInputs = document.querySelectorAll('.ainput');
-autosaveInputs.forEach((input, index) => {
-  const key = 'zenova_answer_' + index;
-
-  input.value = localStorage.getItem(key) || '';
-
-  input.addEventListener('input', () => {
-    localStorage.setItem(key, input.value);
-  });
-});
-
-// Checkboxen speichern
-const autosaveChecks = document.querySelectorAll('.qcheck');
-const autosaveCards = document.querySelectorAll('.qcard');
-
-autosaveChecks.forEach((check, index) => {
-  const key = 'zenova_check_' + index;
-
-  const saved = localStorage.getItem(key);
-  if (saved === 'true') {
-    check.checked = true;
-    autosaveCards[index]?.classList.add('answered');
-  }
-
-  check.addEventListener('change', () => {
-    localStorage.setItem(key, check.checked);
-  });
-});
-</script>
+  <footer><div class="wrap">© 2026 Zenova Coaching · Patrice · Schweizer Markt</div></footer>
 </body>
 </html>
